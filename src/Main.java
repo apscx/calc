@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Main {
 
@@ -20,7 +21,7 @@ public class Main {
         String sOperator = lexems[1];
         String sOperand2 = lexems[2];
 
-        int value1 = 0, value2 = 0;
+        int value1, value2;
 
         boolean isRoman = isRomanNumber(sOperand1) && isRomanNumber(sOperand2);
 
@@ -59,9 +60,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        System.out.println(isRomanNumber("Iii"));
-//        System.out.println(isRomanNumber("xc"));
-        System.out.println(calc("VI / III"));
+        Scanner sc = new Scanner(System.in);
+        String expr = sc.nextLine().trim();
+        sc.close();
+
+        System.out.println(calc(expr));
+
     }
 
     final static int[] arabicset = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
